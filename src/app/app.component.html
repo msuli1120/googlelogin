@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+<div> {{ (user | async)?.displayName }} </div>
+<button (click)="login()">Google Login</button>
+<button (click)="logout()">Logout</button><br>
+
+<input #name placeholder="name">
+<input #uid placeholder="uid">
+<input #email placeholder="email">
+<input #picture placeholder="picture">
+<button (click)="save(name.value, uid.value, email.value, picture.value)">Save User</button><br>
+
+<input #signupEmail placeholder="email">
+<input #signupPass placeholder="password">
+<button (click)="signup(signupEmail.value, signupPass.value)">SignUp</button><br>
+
+<button (click)="twitterLogin()">Twitter Login</button>
+<button (click)="logout()">Twitter Logout</button>
+
+<router-outlet></router-outlet>
